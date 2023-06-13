@@ -26,12 +26,21 @@
     container.innerHTML = '';
         Array.isArray(show)
             ? show.map(val => {
+                // //cell.textContent is used to set the text content of the td element
+                // // item.title accesses the value of the title property of the current item object             
                 let row = document.createElement('tr');
-                let cell = document.createElement('td');
-                //cell.textContent is used to set the text content of the td element
-                // item.title accesses the value of the title property of the current item object
-                cell.textContent = val.title;
-                row.appendChild(cell);
+                // userid
+                let userIdCell = document.createElement('td');
+                userIdCell.textContent = val.userId;
+                row.appendChild(userIdCell);
+                // title
+                let titleCell = document.createElement('td');
+                titleCell.textContent = val.title;
+                row.appendChild(titleCell);
+                // body
+                let bodyCell = document.createElement('td');
+                bodyCell.textContent = val.body;
+                row.appendChild(bodyCell);
                 container.appendChild(row);
             })
             : container.innerHTML = '<tr><td>Data removed</td></tr>';
@@ -47,8 +56,7 @@
         localStorage.removeItem('fetchData');
         displayData();
         // console.log("dara removed");
-    };
-  
+    };  
     document.getElementById('fetch-button').addEventListener('click', Fetch_Click);
     document.getElementById('remove-button').addEventListener('click', Remove_Click);
 
