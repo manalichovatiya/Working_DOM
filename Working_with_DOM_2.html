@@ -14,7 +14,7 @@
         color: black;
         font-size: 17px;
         box-shadow: inset 2px 3px black;
-        // git 
+
     }
 </style>
 <body>
@@ -28,6 +28,7 @@
         let data = await response.json();
         localStorage.setItem('fetchData', JSON.stringify(data));
         return data;
+        //git
     };
 
     let getData = () => JSON.parse(localStorage.getItem('fetchData'));
